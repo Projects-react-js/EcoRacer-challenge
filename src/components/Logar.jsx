@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function Logar() {
   const [email, setEmail] = useState('');
@@ -27,29 +27,43 @@ export default function Logar() {
     } else {
       setMessage('Senha incorreta.');
     }
+
+    setSenha('');
+    setEmail('');
   };
 
   return (
-    <div className='flex items-center flex-col gap-20 px-20 py-20 absolute w-full h-screen bg-custom-radial'>
-      <h2 className='text-white text-6xl'>Login</h2>
-      <form onSubmit={handleLogin} className='flex flex-col gap-5'>
-        <label htmlFor="email">Email</label>
+    <div className='flex items-center flex-col w-full h-screen bg-custom-radial relative lg:px-20 lg:py-40 lg:gap-5 md:px-40 md:py-30 md:gap-5 px-10 py-20'>
+      <h2 className='text-white font-russo text-4xl sm:text-5xl md:text-6xl'>Login</h2>
+      <p className='text-primary-color mt-4'>{message}</p>
+      
+      <form onSubmit={handleLogin} className='flex flex-col gap-5 w-full max-w-xs sm:max-w-md md:max-w-lg'>
+        <label htmlFor="email" className='text-white'>Email</label>
         <input
           type="email"
           placeholder="Digite seu e-mail"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} className='px-20' />
+          onChange={(e) => setEmail(e.target.value)}
+          className='bg-transparent border-2 rounded-3xl border-white text-white px-4 py-2 sm:py-3 sm:px-5 md:py-4 md:px-6'
+        />
 
-        <label htmlFor="password">Senha</label>
+        <label htmlFor="password" className='text-white'>Senha</label>
         <input
           type="password"
           placeholder="Digite sua senha"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
+          className='bg-transparent border-2 rounded-3xl border-white text-white px-4 py-2 sm:py-3 sm:px-5 md:py-4 md:px-6'
         />
-        <button type="submit">Entrar</button>
+        
+        <button type="submit" className='bg-white text-primary-color font-bold rounded-3xl px-4 py-2 sm:py-3 sm:px-5 md:py-4 md:px-6'>
+          Entrar
+        </button>
       </form>
-      {message && <p>{message}</p>}
-    </div>
+
+      <a href="/cadastro" className='text-white border-b-2 border-white mt-4'>
+        Cadastre-se por aqui.
+      </a>
+</div>
   );
 }

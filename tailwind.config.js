@@ -9,6 +9,12 @@ export default {
       backgroundImage: {
         'custom-radial': 'radial-gradient(82.32% 82.32% at 50% 17.68%, #000000 55%, #0000FF 100%)',
       },
+      textColor: {
+        'primary-color': '#0000ff',
+      },
+      fontFamily: {
+        russo: ['"Russo One"', 'sans-serif'], // Adiciona a fonte "Russo One"
+      },
     },
   },
   plugins: [],

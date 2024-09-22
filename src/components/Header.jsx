@@ -5,7 +5,7 @@ export default function Header(){
     const navigate = useNavigate()
 
     return(
-        <header className="bg-black text-white flex justify-around py-4">
+        <header className="absolute z-10 bg-transparent text-white flex justify-around py-4 w-full">
             <div>
                 <img src="/" alt="" />
             </div>
