@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx'
 import Cadastro from './pages/Cadastro.jsx'
 import PageNotFound from './pages/PageNotFound.jsx'
 import Login from './pages/Login.jsx'
+import Logado from './pages/Logado.jsx'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home/>},
       { path: "/cadastro", element: <Cadastro/>},
       { path: "/login", element: <Login/>},
+      { path: "/login/id:", element: <Logado/>},
       { path: "*", element: <PageNotFound/>}
     ]
   }
