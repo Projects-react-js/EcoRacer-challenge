@@ -1,11 +1,10 @@
+import AreaUsuario from "../components/AreaUsuario";
+
 export default function Logado(){
-
-
-
 
     return(
         <>
-        <h1>logado</h1>
+            <AreaUsuario/>
         </>
     )
 }

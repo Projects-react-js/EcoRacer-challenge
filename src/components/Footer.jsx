@@ -6,7 +6,7 @@ export default function Footer(){
     return(
         <>
             <footer className="bg-black"> 
-                <h1>footer</h1>
+                <h1 className="text-white">footer</h1>
             </footer>
         
         </>

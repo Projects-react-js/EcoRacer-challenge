@@ -7,3 +7,7 @@
 .active {
     border-bottom: 2px solid white;
 }
+
+p {
+    color: white;
+}
