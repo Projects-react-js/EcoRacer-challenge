@@ -22,10 +22,10 @@ export default function AreaUsuario() {
 
   return (
     <>
-      <section className="bg-black flex items-center flex-col w-full h-screen md:h-auto relative lg:px-20 lg:py-20 lg:gap-5 md:px-40 md:py-30 md:gap-5 px-10 py-20" >
+      <section className="bg-black flex items-center justify-center flex-col w-full h-screen md:h-auto relative lg:px-20 lg:py-20 lg:gap-5 md:px-40 md:py-30 md:gap-5 px-10 py-20" >
         <div>
           <h2 className="text-white">{`Bem-vindo, ${nome}!`}</h2>
-          <div>
+          <div className="flex flex-col gap-10">
             <Carbons/>
           </div>
 

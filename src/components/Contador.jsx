@@ -58,13 +58,14 @@ export default function Contador({ onFinish }) {
 
     seconds = 0;
     minutes = 0;
-    document.getElementById('time').innerText = "";
+    document.getElementById('time').innerText = "00:00";
   };
 
   return (
     <div className=" w-auto flex flex-col items-center gap-5">
         <div className="bg-white px-5 py-2">
             <h3 id="time">
+              00:00
             </h3>
         </div>
         <div className="flex gap-5">

@@ -13,7 +13,8 @@ export default {
         'primary-color': '#0000ff',
       },
       fontFamily: {
-        russo: ['"Russo One"', 'sans-serif'], // Adiciona a fonte "Russo One"
+        russo: ['"Russo One"', 'sans-serif'],
+        roboto: ['"Roboto"', 'sans-serif'],
       },
     },
   },
