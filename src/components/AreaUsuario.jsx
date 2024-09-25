@@ -1,8 +1,22 @@
 import { useState, useEffect } from "react";
-import Contador from "./Contador";
 import Carbons from "./Carbons";
+import Sections from "./Sections"
+import Description from "./Description";
 
-export default function AreaUsuario() {
+export default function AreaUsuario( {description} ) {
+
+  const styleOfSections = [
+    {
+    style: 'flex relative w-full h-screen min-w-56 bg-black lg:px-20 lg:py-40 lg:gap-5 md:px-30 md:py-30 md:gap-5 px-10 py-20'
+    }
+  ]
+
+  const textAndStyleDescription = [
+    {
+    text: 'Corra e ganhe carbons coins!'
+    },
+  ]
+
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');  
 
@@ -22,15 +36,21 @@ export default function AreaUsuario() {
 
   return (
     <>
-      <section className="bg-black flex items-center justify-center flex-col w-full h-screen md:h-auto relative lg:px-20 lg:py-20 lg:gap-5 md:px-40 md:py-30 md:gap-5 px-10 py-20" >
+      <Sections forSections={styleOfSections}>
         <div>
-          <h2 className="text-white">{`Bem-vindo, ${nome}!`}</h2>
-          <div className="flex flex-col gap-10">
+          <h2 className="text-white font-russo lg:text-4xl md:text-3xl sm:text-2xl text-2xl lg:py-5 md:py-4 sm:py-3 py-2">Bem-vindo {`${nome}`} !</h2>
+
+          <Description forDescription={textAndStyleDescription}/>
+
+          <div className="flex flex-col gap-10 ">
             <Carbons/>
           </div>
-
         </div>
-      </section>
+
+        <div>
+          
+        </div>
+      </Sections>
     </>
   );
 }

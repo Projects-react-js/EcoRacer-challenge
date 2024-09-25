@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Cadastrar() {
-  const [nome, setNome] = useState('');
+  const [nome, setNome] = useState('').u();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [message, setMessage] = useState('');

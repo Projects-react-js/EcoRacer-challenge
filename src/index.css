@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    min-width: 320px;
+}
+
 .active {
     border-bottom: 2px solid #0000ff;
 }
