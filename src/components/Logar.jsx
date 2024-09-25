@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Logar() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [message, setMessage] = useState('');
+
+  const navigate = useNavigate();
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,32 +29,51 @@ export default function Logar() {
 
     if (historicoUsuariosSenha === senha) {
       setMessage('Login realizado com sucesso!');
+      localStorage.setItem('email', email);
+      navigate('/login/id:')
+
     } else {
       setMessage('Senha incorreta.');
     }
+
+    setSenha('');
+    setEmail('');
   };
 
   return (
-    <div className='flex items-center flex-col gap-20 px-20 py-20 absolute w-full h-screen bg-custom-radial'>
-      <h2 className='text-white text-6xl'>Login</h2>
-      <form onSubmit={handleLogin} className='flex flex-col gap-5'>
-        <label htmlFor="email">Email</label>
+    <div className='flex items-center flex-col w-full h-screen md:h-auto bg-custom-radial relative lg:px-20 lg:py-20 lg:gap-31 md:px-40 md:py-20 md:gap-2 px-10 py-20'>
+      <h2 className='text-white font-russo text-4xl sm:text-5xl md:text-6xl'>Login</h2>
+      <p className='text-primary-color mt-4'>{message}</p>
+      
+      <form onSubmit={handleLogin} className='flex flex-col gap-3 w-full max-w-xs md:max-w-lg lg:max-w-xl'>
+        <label htmlFor="email" className='text-white'>Email</label>
         <input
           type="email"
+          id='email'
           placeholder="Digite seu e-mail"
           value={email}
-          onChange={(e) => setEmail(e.target.value)} className='px-20' />
+          onChange={(e) => setEmail(e.target.value)}
+          className='bg-transparent border-2 rounded-3xl border-white text-white px-4 py-2 sm:py-3 sm:px-5 md:py-4 md:px-6'
+        />
 
-        <label htmlFor="password">Senha</label>
+        <label htmlFor="password" className='text-white'>Senha</label>
         <input
           type="password"
+          id='password'
           placeholder="Digite sua senha"
           value={senha}
           onChange={(e) => setSenha(e.target.value)}
+          className='bg-transparent border-2 rounded-3xl border-white text-white px-4 py-2 sm:py-3 sm:px-5 md:py-4 md:px-6'
         />
-        <button type="submit">Entrar</button>
+        
+        <button type="submit" className='bg-white text-primary-color font-bold rounded-3xl px-4 py-2 sm:py-3 sm:px-5 md:py-4 md:px-6'>
+          Entrar
+        </button>
       </form>
-      {message && <p>{message}</p>}
+
+      <a href="/cadastro" className='text-white border-b-2 border-white mt-4'>
+        Cadastre-se por aqui.
+      </a>
     </div>
   );
 }
